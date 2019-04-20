@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+// Modified version of the CharacterController2D.
 // Source: https://github.com/Brackeys/2D-Character-Controller/blob/master/CharacterController2D.cs
 public class CharacterController2D : MonoBehaviour
 {
@@ -138,9 +139,8 @@ public class CharacterController2D : MonoBehaviour
 		// Switch the way the player is labelled as facing.
 		m_FacingRight = !m_FacingRight;
 
-		// Multiply the player's x local scale by -1.
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
+		var rotation = transform.rotation;
+		rotation.y = m_FacingRight ? 0 : 180;
+		transform.rotation = rotation;
 	}
 }
