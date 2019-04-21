@@ -5,9 +5,14 @@ using UnityEngine;
 public class DebugMenu : MonoBehaviour
 {
 	[SerializeField] private int defaultStep = 1;
+	[SerializeField] private TMPro.TextMeshProUGUI currentStepText;
+	public static readonly List<State> steps = new List<State>
+	{
+		new State { text = "Introduction", color = Color.red },
+		new State { text = "Basic animations and sound", color = Color.blue }
+	};
 
 	public int currentStep { get; private set; }
-	public const int stepsCount = 2;
 
 	public static Action OnStepChange = delegate { };
 
@@ -37,7 +42,7 @@ public class DebugMenu : MonoBehaviour
 
 	private void NextStep()
 	{
-		var newIndex = Math.Min(currentStep + 1, stepsCount - 1);
+		var newIndex = Math.Min(currentStep + 1, steps.Count - 1);
 
 		ChangeStep(newIndex);
 	}
@@ -46,5 +51,12 @@ public class DebugMenu : MonoBehaviour
 	{
 		currentStep = step;
 		OnStepChange();
+		currentStepText.text = steps[step].text;
+	}
+
+	public class State
+	{
+		public string text;
+		public Color color;
 	}
 }

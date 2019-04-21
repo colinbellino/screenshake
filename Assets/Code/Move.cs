@@ -8,8 +8,10 @@ public class Move : StepMonoBehaviour
 
 	private const float jumpCooldown = 0.2f;
 
-	protected void OnDisable()
+	protected override void OnDisable()
 	{
+		base.OnDisable();
+
 		controller.Move(0f, false, false);
 	}
 
