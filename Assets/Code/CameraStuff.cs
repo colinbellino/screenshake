@@ -9,23 +9,6 @@ public class CameraStuff : MonoBehaviour
 
 	private void OnEnable()
 	{
-		UpdateTarget();
-
-		DebugMenu.OnStepChange += OnStepChange;
-	}
-
-	private void OnDisable()
-	{
-		DebugMenu.OnStepChange -= OnStepChange;
-	}
-
-	private void OnStepChange()
-	{
-		UpdateTarget();
-	}
-
-	private void UpdateTarget()
-	{
 		target = GameObject.FindGameObjectWithTag("Player");
 	}
 

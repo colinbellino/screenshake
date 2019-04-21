@@ -1,15 +1,14 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Shooter : MonoBehaviour
+public class Shooter : StepMonoBehaviour
 {
 	[SerializeField] private float rateOfFire = 0.1f;
 	[SerializeField] private GameObject projectilePrefab;
 	[SerializeField] private Transform projectileOrigin;
 	[SerializeField] private UnityEvent OnFireEvent;
 
-	private IInput input;
-	private CharacterController2D controller;
 	private float fireTimestamp;
 
 	private void Awake()
@@ -18,12 +17,6 @@ public class Shooter : MonoBehaviour
 		{
 			OnFireEvent = new UnityEvent();
 		}
-	}
-
-	private void OnEnable()
-	{
-		input = GetComponent<IInput>();
-		controller = GetComponent<CharacterController2D>();
 	}
 
 	private void Update()
@@ -41,7 +34,7 @@ public class Shooter : MonoBehaviour
 		var instance = GameObject.Instantiate(
 			projectilePrefab,
 			projectileOrigin.position,
-			transform.rotation
+			transform.root.rotation
 		);
 
 		var projectileFacade = instance.GetComponent<ProjectileFacade>();

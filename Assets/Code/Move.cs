@@ -1,21 +1,14 @@
 using UnityEngine;
 
-public class Move : MonoBehaviour
+public class Move : StepMonoBehaviour
 {
 	[SerializeField] private float speed = 1f;
 
-	private IInput input;
-	private CharacterController2D controller;
 	private float jumpTimestamp;
+
 	private const float jumpCooldown = 0.2f;
 
-	private void OnEnable()
-	{
-		input = GetComponent<IInput>();
-		controller = GetComponent<CharacterController2D>();
-	}
-
-	private void OnDisable()
+	protected void OnDisable()
 	{
 		controller.Move(0f, false, false);
 	}
