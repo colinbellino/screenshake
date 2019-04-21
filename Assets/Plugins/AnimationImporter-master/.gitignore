@@ -1,0 +1,52 @@
+# Project related (example files)
+
+/Assets/Resources/
+/Assets/Resources.meta
+
+/Assets/TestAnimations/
+/Assets/TestAnimations.meta
+
+/ProjectSettings/
+/UnityPackageManager/
+
+
+# Unity generated
+
+Temp
+Obj
+UnityGenerated
+/Library/
+/Logs/
+/.vs
+
+ 
+# Unity packages (we don't need any specific package for this plugin)
+
+/Packages/
+
+
+# Visual Studio / MonoDevelop generated
+
+*sln.ide
+ExportedObj
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+ 
+
+# OS generated
+
+.DS_Store
+.DS_Store
+._
+.Spotlight-V100
+.Trashes
+Icon
+ehthumbs.db
+Thumbs.db
