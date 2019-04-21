@@ -5,8 +5,12 @@ public class Health : MonoBehaviour
 {
 	[SerializeField] private int health = 1;
 
+	private Transform owner;
+
 	private void OnEnable()
 	{
+		owner = transform.root;
+
 		Damage.OnDamage += OnDamage;
 	}
 
@@ -27,7 +31,7 @@ public class Health : MonoBehaviour
 		{
 			// TODO: Trigger sound
 			// TODO: Trigger animation
-			Destroy(gameObject);
+			Destroy(owner.gameObject);
 		}
 	}
 }

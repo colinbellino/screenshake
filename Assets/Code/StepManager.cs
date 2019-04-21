@@ -54,12 +54,12 @@ public class StepManager : MonoBehaviour
 			{
 				component.enabled = true;
 			}
-		}
 
-		var stepAnimator = current.GetComponent<StepAnimator>();
-		if (stepAnimator)
-		{
-			animator.runtimeAnimatorController = stepAnimator.controller;
+			var stepAnimator = current.GetComponent<StepAnimator>();
+			if (stepAnimator)
+			{
+				animator.runtimeAnimatorController = stepAnimator.controller;
+			}
 		}
 	}
 
