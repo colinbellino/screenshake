@@ -9,6 +9,7 @@ public class StepMonoBehaviour : MonoBehaviour
 	protected IInput input;
 	protected TriggerBroadcaster triggerBroadcaster;
 	protected CharacterController2D controller;
+	protected Animator animator;
 
 	protected virtual void OnEnable()
 	{
@@ -16,6 +17,7 @@ public class StepMonoBehaviour : MonoBehaviour
 		rb = GetComponentInParent<Rigidbody2D>();
 		input = GetComponentInParent<IInput>();
 		triggerBroadcaster = GetComponentInParent<TriggerBroadcaster>();
+		animator = GetComponentInParent<Animator>();
 
 		DebugMenu.OnStepChange += OnStepChange;
 	}

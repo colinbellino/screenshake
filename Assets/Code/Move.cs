@@ -5,7 +5,6 @@ public class Move : StepMonoBehaviour
 	[SerializeField] private float speed = 1f;
 
 	private float jumpTimestamp;
-
 	private const float jumpCooldown = 0.2f;
 
 	protected override void OnDisable()
