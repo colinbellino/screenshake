@@ -10,7 +10,7 @@ public class EnemyAI : MonoBehaviour
 	private bool isGoingLeft;
 	private float direction => isGoingLeft ? -1f : 1f;
 
-	private void Start()
+	private void OnEnable()
 	{
 		input = GetComponent<EnemyInput>();
 

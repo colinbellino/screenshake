@@ -7,10 +7,15 @@ public class Move : MonoBehaviour
 	private IInput input;
 	private CharacterController2D controller;
 
-	private void Start()
+	private void OnEnable()
 	{
 		input = GetComponent<IInput>();
 		controller = GetComponent<CharacterController2D>();
+	}
+
+	private void OnDisable()
+	{
+		controller.Move(0f, false, false);
 	}
 
 	private void FixedUpdate()

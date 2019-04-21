@@ -6,7 +6,7 @@ public class ImpulseMove : MonoBehaviour
 
 	private Rigidbody2D rb;
 
-	private void Start()
+	private void OnEnable()
 	{
 		rb = GetComponent<Rigidbody2D>();
 	}
