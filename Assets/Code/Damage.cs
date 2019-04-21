@@ -32,7 +32,6 @@ public class Damage : MonoBehaviour
 		OnDamage.Invoke(collider.transform.root, damage);
 		OnDamageEvent.Invoke();
 
-		// TODO: Trigger sound
 		// TODO: Trigger animation
 		Destroy(gameObject);
 	}
