@@ -287,7 +287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2990744849921775338}
-  - component: {fileID: 2990744849921775337}
+  - component: {fileID: 5773567295983109279}
   - component: {fileID: 2990744849921775339}
   - component: {fileID: 2990744849921775343}
   - component: {fileID: 2990744849921775342}
@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 7963117244268536358}
   - component: {fileID: 6345512752383614344}
   - component: {fileID: 4003843703363469106}
+  - component: {fileID: 8099561358232140440}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -323,7 +324,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2990744849921775337
+--- !u!212 &5773567295983109279
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -360,8 +361,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: eaaaea526bdf84df991fad9035a877a0, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 5980733909284804400, guid: e2a9a1ab03389884cb51d62478033e93,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -470,6 +472,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e5b5e398b0ca84d80d8f91ccde23b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &8099561358232140440
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2990744849921775336}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72d7e63071674e0479639a706c87de67, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3665056803638057395
 GameObject:
   m_ObjectHideFlags: 0
