@@ -6,10 +6,11 @@ public class Damage : MonoBehaviour
 {
 	[SerializeField] private int damage = 1;
 	[SerializeField] private UnityEvent OnDamageEvent;
-
-	private ProjectileFacade projectileFacade;
-
 	public static Action<Transform, int> OnDamage;
+
+	private TriggerBroadcaster triggerBroadcaster;
+	private ProjectileFacade projectileFacade;
+	private Transform owner;
 
 	private void Awake()
 	{
@@ -21,10 +22,19 @@ public class Damage : MonoBehaviour
 
 	private void OnEnable()
 	{
-		projectileFacade = GetComponent<ProjectileFacade>();
+		triggerBroadcaster = GetComponentInParent<TriggerBroadcaster>();
+		projectileFacade = GetComponentInParent<ProjectileFacade>();
+		owner = transform.root;
+
+		triggerBroadcaster.OnTriggerEnterEvent += OnTriggerEnterEvent;
 	}
 
-	private void OnTriggerEnter2D(Collider2D collider)
+	protected void OnDisable()
+	{
+		triggerBroadcaster.OnTriggerEnterEvent -= OnTriggerEnterEvent;
+	}
+
+	private void OnTriggerEnterEvent(Collider2D collider)
 	{
 		if (collider.transform == projectileFacade.Shooter.transform) { return; }
 
@@ -33,6 +43,6 @@ public class Damage : MonoBehaviour
 		OnDamageEvent.Invoke();
 
 		// TODO: Trigger animation
-		Destroy(gameObject);
+		Destroy(owner.gameObject);
 	}
 }

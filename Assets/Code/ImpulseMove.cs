@@ -5,14 +5,16 @@ public class ImpulseMove : MonoBehaviour
 	[SerializeField] private float speed = 10f;
 
 	private Rigidbody2D rb;
+	private Transform owner;
 
 	private void OnEnable()
 	{
-		rb = GetComponent<Rigidbody2D>();
+		rb = GetComponentInParent<Rigidbody2D>();
+		owner = GetComponentInParent<Transform>();
 	}
 
 	private void Update()
 	{
-		rb.velocity = transform.right * speed;
+		rb.velocity = owner.right * speed;
 	}
 }

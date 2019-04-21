@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
 
 	private void OnDamage(Transform target, int damage)
 	{
-		if (target != transform) { return; }
+		if (target != transform.root) { return; }
 
 		// TODO: Trigger sound
 		// TODO: Trigger animation
