@@ -75,9 +75,8 @@ public class CharacterController2D : StepMonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump)
 	{
-		if (animator && rb.velocity.y == 0)
+		if (animator && Mathf.Approximately(rb.velocity.y, 0f))
 		{
-			Debug.Log("land");
 			animator.SetTrigger("Land");
 		}
 

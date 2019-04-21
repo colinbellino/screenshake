@@ -3,10 +3,12 @@ using UnityEngine;
 public class StepManager : MonoBehaviour
 {
 	private DebugMenu debugMenu;
+	private Animator animator;
 
 	private void Awake()
 	{
 		debugMenu = GameObject.Find("Game Manager").GetComponent<DebugMenu>();
+		animator = GetComponent<Animator>();
 
 		DisableAllSteps();
 		EnableCurrentStep();
@@ -52,6 +54,12 @@ public class StepManager : MonoBehaviour
 			{
 				component.enabled = true;
 			}
+		}
+
+		var stepAnimator = current.GetComponent<StepAnimator>();
+		if (stepAnimator)
+		{
+			animator.runtimeAnimatorController = stepAnimator.controller;
 		}
 	}
 

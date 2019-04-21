@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 419294719425559914}
   - component: {fileID: 6280659583451155514}
   - component: {fileID: 7640841701728074957}
+  - component: {fileID: 5938748536763693826}
   m_Layer: 8
   m_Name: Step1
   m_TagString: Untagged
@@ -215,6 +216,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+--- !u!114 &5938748536763693826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202810886689979657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2bcc50f0af7984eb2bdb8d376d1dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: 9100000, guid: 72d7e63071674e0479639a706c87de67, type: 2}
 --- !u!1 &2000677182444731756
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +682,7 @@ GameObject:
   - component: {fileID: 5925077575731449528}
   - component: {fileID: 4782322894012212179}
   - component: {fileID: 4312647772906902160}
+  - component: {fileID: 7575543290643859676}
   m_Layer: 8
   m_Name: Step0
   m_TagString: Untagged
@@ -790,3 +805,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+--- !u!114 &7575543290643859676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8455793143285932905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2bcc50f0af7984eb2bdb8d376d1dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: 9100000, guid: e09dc5d9987e52d429254123942157eb, type: 2}
