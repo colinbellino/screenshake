@@ -24,14 +24,13 @@ public class StepManager : MonoBehaviour
 
 	private void OnStepChange()
 	{
-		Debug.Log("OnStepChange " + debugMenu.currentStep);
 		DisableAllSteps();
 		EnableCurrentStep();
 	}
 
 	private void DisableAllSteps()
 	{
-		for (int i = 0; i < DebugMenu.stepsCount; i++)
+		for (int i = 0; i < DebugMenu.steps.Count; i++)
 		{
 			var current = transform.Find($"Step{i}");
 			if (current != null)
