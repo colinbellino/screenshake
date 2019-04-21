@@ -6,10 +6,11 @@ public class DebugMenu : MonoBehaviour
 {
 	[SerializeField] private int defaultStep = 1;
 	[SerializeField] private TMPro.TextMeshProUGUI currentStepText;
+	[SerializeField] private SpriteRenderer backgroundRenderer;
 	public static readonly List<State> steps = new List<State>
 	{
-		new State { text = "Introduction", color = Color.red },
-		new State { text = "Basic animations and sound", color = Color.blue }
+		new State { text = "Introduction", color = new Color32(255, 160, 116, 116) },
+		new State { text = "Basic animations and sound", color = new Color32(255, 160, 124, 116) }
 	};
 
 	public int currentStep { get; private set; }
@@ -51,12 +52,14 @@ public class DebugMenu : MonoBehaviour
 	{
 		currentStep = step;
 		OnStepChange();
+
 		currentStepText.text = steps[step].text;
+		backgroundRenderer.color = steps[step].color;
 	}
 
 	public class State
 	{
 		public string text;
-		public Color color;
+		public Color32 color;
 	}
 }
