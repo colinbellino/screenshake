@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class Shooter : MonoBehaviour
 {
 	[SerializeField] private float rateOfFire = 0.1f;
 	[SerializeField] private GameObject projectilePrefab;
@@ -10,7 +10,7 @@ public class Shoot : MonoBehaviour
 	private CharacterController2D controller;
 	private float fireTimestamp;
 
-	private void Start()
+	private void OnEnable()
 	{
 		input = GetComponent<IInput>();
 		controller = GetComponent<CharacterController2D>();
@@ -27,10 +27,13 @@ public class Shoot : MonoBehaviour
 
 	private void FireProjectile()
 	{
-		var projectile = GameObject.Instantiate(
+		var instance = GameObject.Instantiate(
 			projectilePrefab,
 			projectileOrigin.position,
 			transform.rotation
 		);
+
+		var projectileFacade = instance.GetComponent<ProjectileFacade>();
+		projectileFacade.SetShooter(this);
 	}
 }
