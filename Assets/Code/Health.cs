@@ -23,7 +23,6 @@ public class Health : MonoBehaviour
 	{
 		if (target != transform.root) { return; }
 
-		// TODO: Trigger sound
 		// TODO: Trigger animation
 		health = Math.Max(health - damage, 0);
 
