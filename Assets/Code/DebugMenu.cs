@@ -4,35 +4,79 @@ using UnityEngine;
 
 public class DebugMenu : MonoBehaviour
 {
+	[SerializeField] private GameObject playerStep0;
+	[SerializeField] private GameObject playerStep1;
+
 	private int currentIndex;
-	private int max = 29;
+
+	private Dictionary<int, DebugState> steps = new Dictionary<int, DebugState>();
+	public static Action OnStepChange;
+
+	private void Awake()
+	{
+		steps.Add(0, new DebugState
+		{
+			Enter = () =>
+				{
+					playerStep0.SetActive(true);
+				},
+				Leave = () =>
+				{
+					playerStep0.SetActive(false);
+				}
+		});
+		steps.Add(1, new DebugState
+		{
+			Enter = () =>
+				{
+					playerStep1.SetActive(true);
+				},
+				Leave = () =>
+				{
+					playerStep1.SetActive(false);
+				}
+		});
+	}
 
 	private void Update()
 	{
 		if (Input.GetButtonDown("DebugPrev"))
 		{
-			currentIndex = Math.Max(currentIndex - 1, 0);
-			TransitionTo();
+			PreviousStep();
 		}
 		else if (Input.GetButtonDown("DebugNext"))
 		{
-			currentIndex = Math.Min(currentIndex + 1, max);
-			TransitionTo();
+			NextStep();
 		}
 	}
 
-	private void TransitionTo()
+	private void PreviousStep()
 	{
-		Debug.Log("-> " + currentIndex);
+		Debug.Log("PreviousStep -> " + currentIndex);
+		var newIndex = Math.Max(currentIndex - 1, 0);
 
-		if (currentIndex == 0)
-		{
-			Debug.Log("0");
-		}
+		steps[currentIndex].Leave();
+		steps[newIndex].Enter();
 
-		if (currentIndex == 1)
-		{
-			Debug.Log("1");
-		}
+		currentIndex = newIndex;
+		OnStepChange();
 	}
+
+	private void NextStep()
+	{
+		Debug.Log("NextStep -> " + currentIndex);
+		var newIndex = Math.Min(currentIndex + 1, steps.Count);
+
+		steps[currentIndex].Leave();
+		steps[newIndex].Enter();
+
+		currentIndex = newIndex;
+		OnStepChange();
+	}
+}
+
+public class DebugState
+{
+	public Action Enter;
+	public Action Leave;
 }

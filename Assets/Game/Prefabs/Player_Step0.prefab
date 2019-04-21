@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 6108110645089204816}
   - component: {fileID: 5033714200517318975}
   m_Layer: 8
-  m_Name: Player
+  m_Name: Player_Step0
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae1c2373b9064d589bbf93a1bc36651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 20
 --- !u!95 &2990744849921775340
 Animator:
   serializedVersion: 3
