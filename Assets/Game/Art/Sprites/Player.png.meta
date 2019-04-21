@@ -14,6 +14,15 @@ TextureImporter:
   - first:
       213: -6498113885980019278
     second: Player 3
+  - first:
+      213: 4128984013433120621
+    second: Player 4
+  - first:
+      213: 4323603953054973711
+    second: Player 5
+  - first:
+      213: 1051862883249695518
+    second: Player 6
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -72,7 +81,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -131,8 +140,8 @@ TextureImporter:
       name: Player 2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 32
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -152,8 +161,8 @@ TextureImporter:
       name: Player 3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 48
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -165,6 +174,69 @@ TextureImporter:
       bones: []
       spriteID: 2b5b02469df02d5a0800000000000000
       internalID: -6498113885980019278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player 4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d67a2fb75191d4930800000000000000
+      internalID: 4128984013433120621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player 5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ff05b43e6800c30800000000000000
+      internalID: 4323603953054973711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player 6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1b248428b7f89e00800000000000000
+      internalID: 1051862883249695518
       vertices: []
       indices: 
       edges: []

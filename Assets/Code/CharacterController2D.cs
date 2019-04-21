@@ -25,6 +25,8 @@ public class CharacterController2D : StepMonoBehaviour
 
 	public UnityEvent OnLandEvent;
 	public UnityEvent OnJumpEvent;
+	public UnityEvent OnRunEvent;
+	public UnityEvent OnIdleEvent;
 
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
@@ -39,6 +41,12 @@ public class CharacterController2D : StepMonoBehaviour
 
 		if (OnJumpEvent == null)
 			OnJumpEvent = new UnityEvent();
+
+		if (OnRunEvent == null)
+			OnRunEvent = new UnityEvent();
+
+		if (OnIdleEvent == null)
+			OnIdleEvent = new UnityEvent();
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
@@ -58,13 +66,21 @@ public class CharacterController2D : StepMonoBehaviour
 			{
 				m_Grounded = true;
 				if (!wasGrounded)
+				{
 					OnLandEvent.Invoke();
+				}
 			}
 		}
 	}
 
 	public void Move(float move, bool crouch, bool jump)
 	{
+		if (animator && rb.velocity.y == 0)
+		{
+			Debug.Log("land");
+			animator.SetTrigger("Land");
+		}
+
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
 		{
@@ -112,6 +128,10 @@ public class CharacterController2D : StepMonoBehaviour
 			Vector3 targetVelocity = new Vector2(move * 10f, rb.velocity.y);
 			// And then smoothing it out and applying it to the character
 			rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+			if (animator)
+			{
+				animator.SetFloat("MoveX", move < 0.05f && rb.velocity.x > -0.05f ? 0 : 1f);
+			}
 
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !m_FacingRight)
@@ -141,6 +161,7 @@ public class CharacterController2D : StepMonoBehaviour
 		rb.AddForce(new Vector2(0f, m_JumpForce));
 
 		OnJumpEvent.Invoke();
+		if (animator) { animator.SetTrigger("Jump"); }
 	}
 
 	private void Flip()
