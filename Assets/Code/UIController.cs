@@ -30,6 +30,6 @@ public class UIController : MonoBehaviour
 
 	private void Show()
 	{
-		animator.Play("Show");
+		animator.Play("Show", 0, 0);
 	}
 }

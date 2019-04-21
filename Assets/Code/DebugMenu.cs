@@ -70,7 +70,7 @@ public class DebugMenu : MonoBehaviour
 			{
 				OnStepIncreaseEvent.Invoke();
 			}
-			else
+			else if (currentStepIndex > step)
 			{
 				OnStepDecreaseEvent.Invoke();
 			}
