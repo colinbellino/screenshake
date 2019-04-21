@@ -32,9 +32,4 @@ public class UIController : MonoBehaviour
 	{
 		animator.Play("Show");
 	}
-
-	private void Hide()
-	{
-		animator.Play("Hide");
-	}
 }
