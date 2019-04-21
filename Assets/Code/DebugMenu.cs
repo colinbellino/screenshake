@@ -5,17 +5,14 @@ using UnityEngine;
 public class DebugMenu : MonoBehaviour
 {
 	[SerializeField] private int defaultStep = 1;
-	[SerializeField] private TMPro.TextMeshProUGUI currentStepText;
-	[SerializeField] private SpriteRenderer backgroundRenderer;
+
+	public static Action OnStepChange = delegate { };
 	public static readonly List<State> steps = new List<State>
 	{
 		new State { text = "Introduction", color = new Color32(255, 160, 116, 116) },
 		new State { text = "Basic animations and sound", color = new Color32(255, 160, 124, 116) }
 	};
-
-	public int currentStep { get; private set; }
-
-	public static Action OnStepChange = delegate { };
+	public int currentStepIndex { get; private set; }
 
 	private void Start()
 	{
@@ -36,25 +33,22 @@ public class DebugMenu : MonoBehaviour
 
 	private void PreviousStep()
 	{
-		var newIndex = Math.Max(currentStep - 1, 0);
+		var newIndex = Math.Max(currentStepIndex - 1, 0);
 
 		ChangeStep(newIndex);
 	}
 
 	private void NextStep()
 	{
-		var newIndex = Math.Min(currentStep + 1, steps.Count - 1);
+		var newIndex = Math.Min(currentStepIndex + 1, steps.Count - 1);
 
 		ChangeStep(newIndex);
 	}
 
 	private void ChangeStep(int step)
 	{
-		currentStep = step;
+		currentStepIndex = step;
 		OnStepChange();
-
-		currentStepText.text = steps[step].text;
-		backgroundRenderer.color = steps[step].color;
 	}
 
 	public class State

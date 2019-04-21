@@ -45,7 +45,7 @@ public class StepManager : MonoBehaviour
 
 	private void EnableCurrentStep()
 	{
-		var current = transform.Find($"Step{debugMenu.currentStep}");
+		var current = transform.Find($"Step{debugMenu.currentStepIndex}");
 		if (current != null)
 		{
 			foreach (var component in current.GetComponents<MonoBehaviour>())
@@ -57,7 +57,7 @@ public class StepManager : MonoBehaviour
 
 	public T GetComponentInStep<T>()
 	{
-		var stepTransform = transform.Find($"Step{debugMenu.currentStep}");
+		var stepTransform = transform.Find($"Step{debugMenu.currentStepIndex}");
 		if (stepTransform == null)
 		{
 			var step0Transform = transform.Find("Step0");
@@ -67,7 +67,7 @@ public class StepManager : MonoBehaviour
 				return step0Transform.GetComponent<T>();
 			}
 
-			Debug.LogError($"{transform.name}: Step not found \"Step{debugMenu.currentStep}\".");
+			Debug.LogError($"{transform.name}: Step not found \"Step{debugMenu.currentStepIndex}\".");
 			return GetComponent<T>();
 		}
 
