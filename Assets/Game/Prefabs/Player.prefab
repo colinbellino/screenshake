@@ -319,6 +319,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  OnJumpEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -340,6 +345,11 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5927414787127498299, guid: aaa60ab3511294f3b860245b5a48075f,
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
+  OnFireEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &6108110645089204816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +376,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  cooldown: 0.3
+  bounceForce: 1200
+  OnBounceEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &3665056803638057395
 GameObject:
   m_ObjectHideFlags: 0

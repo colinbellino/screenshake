@@ -25,6 +25,7 @@ public class CharacterController2D : MonoBehaviour
 	[Space]
 
 	public UnityEvent OnLandEvent;
+	public UnityEvent OnJumpEvent;
 
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
@@ -38,6 +39,9 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
+
+		if (OnJumpEvent == null)
+			OnJumpEvent = new UnityEvent();
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
@@ -137,6 +141,8 @@ public class CharacterController2D : MonoBehaviour
 		// Add a vertical force to the player.
 		m_Grounded = false;
 		m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+
+		OnJumpEvent.Invoke();
 	}
 
 	private void Flip()

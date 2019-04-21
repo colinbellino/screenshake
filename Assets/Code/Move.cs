@@ -6,6 +6,8 @@ public class Move : MonoBehaviour
 
 	private IInput input;
 	private CharacterController2D controller;
+	private float jumpTimestamp;
+	private const float jumpCooldown = 0.2f;
 
 	private void OnEnable()
 	{
@@ -20,6 +22,13 @@ public class Move : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		controller.Move(input.move * speed * Time.deltaTime, false, input.jump);
+		var jumpCooldownElapsed = Time.time >= jumpTimestamp;
+
+		controller.Move(input.move * speed * Time.deltaTime, false, input.jump && jumpCooldownElapsed);
+
+		if (input.jump && jumpCooldownElapsed)
+		{
+			jumpTimestamp = Time.time + jumpCooldown;
+		}
 	}
 }
