@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5524730750006078730}
   - component: {fileID: 2119101494886010318}
   - component: {fileID: 8995140175154323642}
+  - component: {fileID: 540622827988629286}
   m_Layer: 0
   m_Name: Step0
   m_TagString: Untagged
@@ -64,6 +65,16 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  OnRunEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnIdleEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -82,6 +93,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+--- !u!114 &540622827988629286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993327782762477498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2bcc50f0af7984eb2bdb8d376d1dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: 9100000, guid: fd4a74c849df78f46ae68e05b0bbdf30, type: 2}
 --- !u!1 &2311135721262436289
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +117,7 @@ GameObject:
   - component: {fileID: 4733967403786550165}
   - component: {fileID: 2175401889205665342}
   - component: {fileID: 4846922163846087913}
+  - component: {fileID: 1954866320735702346}
   m_Layer: 0
   m_Name: Step1
   m_TagString: Untagged
@@ -146,6 +171,16 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  OnRunEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnIdleEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -164,6 +199,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+--- !u!114 &1954866320735702346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2311135721262436289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2bcc50f0af7984eb2bdb8d376d1dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: 9100000, guid: c71f7bbff11fb4e4d9f6c874cdb8548b, type: 2}
 --- !u!1 &3526686467082696273
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +288,7 @@ GameObject:
   - component: {fileID: 1828888744052163484}
   - component: {fileID: 5939184396969451862}
   - component: {fileID: 3879359097494223908}
+  - component: {fileID: 5811974938559808342}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -304,7 +353,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 6271ebc36e08d4f3886d4e134d9fdada, type: 3}
+  m_Sprite: {fileID: 8569802761483337684, guid: 7d5e2550b00877c4694e007aa9f37927,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -403,6 +453,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e5b5e398b0ca84d80d8f91ccde23b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &5811974938559808342
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3526686468690149452}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd4a74c849df78f46ae68e05b0bbdf30, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5243498575598173510
 GameObject:
   m_ObjectHideFlags: 0
