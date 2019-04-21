@@ -11,7 +11,7 @@ public class DebugMenu : MonoBehaviour
 
 	public static Action OnStepChange = delegate { };
 
-	private void OnEnable()
+	private void Start()
 	{
 		ChangeStep(defaultStep);
 	}

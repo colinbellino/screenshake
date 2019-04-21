@@ -16,7 +16,6 @@ public class StepMonoBehaviour : MonoBehaviour
 		rb = GetComponentInParent<Rigidbody2D>();
 		input = GetComponentInParent<IInput>();
 		triggerBroadcaster = GetComponentInParent<TriggerBroadcaster>();
-		UpdateStepComponents();
 
 		DebugMenu.OnStepChange += OnStepChange;
 	}
