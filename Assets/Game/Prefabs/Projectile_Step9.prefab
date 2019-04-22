@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileRenderer: {fileID: 8118468384167552979}
+  collider: {fileID: 7966095430675484253}
   impactAnimator: {fileID: 3922735869056423743}
   destroyAfter: 1
 --- !u!1 &8989161937752635662
@@ -323,6 +324,12 @@ GameObject:
 --- !u!4 &2834548195167364951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4987605224761815132, guid: 5aefac81ac4ab4d49b853d9afb614ecd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7089191476581865227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &7966095430675484253 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 931294599126047062, guid: 5aefac81ac4ab4d49b853d9afb614ecd,
     type: 3}
   m_PrefabInstance: {fileID: 7089191476581865227}
   m_PrefabAsset: {fileID: 0}

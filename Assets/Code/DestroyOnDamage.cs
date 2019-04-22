@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class DestroyOnDamage : MonoBehaviour
 {
 	[SerializeField] private SpriteRenderer projectileRenderer;
+	[SerializeField] private Collider2D collider;
 	[SerializeField] private Animator impactAnimator;
 	[SerializeField] private float destroyAfter = 1f;
 
@@ -17,6 +18,7 @@ public class DestroyOnDamage : MonoBehaviour
 		}
 
 		projectileRenderer.enabled = false;
+		collider.enabled = false;
 		StartCoroutine(DestroyAfterDelay());
 	}
 
