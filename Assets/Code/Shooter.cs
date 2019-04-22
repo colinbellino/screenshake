@@ -9,6 +9,7 @@ public class Shooter : StepMonoBehaviour
 	[SerializeField] private GameObject projectilePrefab;
 	[SerializeField] private Transform projectileOrigin;
 	[SerializeField] private Animator muzzleFlashAnimator;
+	[SerializeField] private float spread = 0f;
 	[SerializeField] private UnityEvent OnFireEvent;
 
 	private float fireTimestamp;
@@ -36,7 +37,7 @@ public class Shooter : StepMonoBehaviour
 		var instance = GameObject.Instantiate(
 			projectilePrefab,
 			projectileOrigin.position,
-			transform.root.rotation
+			GetProjectileRotation()
 		);
 
 		var projectileFacade = instance.GetComponent<ProjectileFacade>();
@@ -47,5 +48,15 @@ public class Shooter : StepMonoBehaviour
 		{
 			muzzleFlashAnimator.Play("Flash");
 		}
+	}
+
+	// FIXME: Enable only on step8+
+	private Quaternion GetProjectileRotation()
+	{
+		var rotation = transform.root.rotation;
+		rotation.z = rotation.z + UnityEngine.Random.Range(-spread, spread);
+		Debug.Log(transform.root.rotation + " -> " + rotation);
+
+		return rotation;
 	}
 }
