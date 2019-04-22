@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[DisallowMultipleComponent]
 public class ImpulseMove : MonoBehaviour
 {
 	[SerializeField] private float speed = 10f;
@@ -11,6 +12,11 @@ public class ImpulseMove : MonoBehaviour
 	{
 		rb = GetComponentInParent<Rigidbody2D>();
 		owner = GetComponentInParent<Transform>();
+	}
+
+	private void OnDisable()
+	{
+		rb.velocity = Vector3.zero;
 	}
 
 	private void Update()

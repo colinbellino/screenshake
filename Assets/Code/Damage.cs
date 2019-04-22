@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
+[DisallowMultipleComponent]
 public class Damage : MonoBehaviour
 {
 	[SerializeField] private int damage = 1;
@@ -41,8 +42,5 @@ public class Damage : MonoBehaviour
 		// Debug.Log(projectileFacade.Shooter.transform.root.name + " > " + name + " => " + collider.transform.root.name);
 		OnDamage.Invoke(collider.transform.root, damage);
 		OnDamageEvent.Invoke();
-
-		// TODO: Trigger animation
-		Destroy(owner.gameObject);
 	}
 }

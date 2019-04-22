@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1925774708225544472
+--- !u!114 &852647956880622733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30,19 +30,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &3827110709638804675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4987605224761815135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b288b71d48d44cffad49f808589a4a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
 --- !u!1001 &1690504482773706340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113,6 +100,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4999851944951842445, guid: aaa60ab3511294f3b860245b5a48075f, type: 3}
     - {fileID: 6628501625568358859, guid: aaa60ab3511294f3b860245b5a48075f, type: 3}
+    - {fileID: 2062884003454362345, guid: aaa60ab3511294f3b860245b5a48075f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aaa60ab3511294f3b860245b5a48075f, type: 3}
 --- !u!1 &4987605224761815135 stripped
 GameObject:
