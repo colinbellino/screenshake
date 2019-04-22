@@ -14,6 +14,12 @@ TextureImporter:
   - first:
       213: -3422086463266292752
     second: Enemy 3
+  - first:
+      213: 3736267196873952872
+    second: Enemy 4
+  - first:
+      213: -8844773829000985315
+    second: Enemy 5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -72,7 +78,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -131,8 +137,8 @@ TextureImporter:
       name: Enemy 2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 32
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -152,8 +158,8 @@ TextureImporter:
       name: Enemy 3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 48
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -165,6 +171,48 @@ TextureImporter:
       bones: []
       spriteID: 0fbf65e1e7e4280d0800000000000000
       internalID: -3422086463266292752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86ecd9f4833e9d330800000000000000
+      internalID: 3736267196873952872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1589bb601d014580800000000000000
+      internalID: -8844773829000985315
       vertices: []
       indices: 
       edges: []
