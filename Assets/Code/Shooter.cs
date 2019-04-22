@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,6 +8,7 @@ public class Shooter : StepMonoBehaviour
 	[SerializeField] private float rateOfFire = 0.1f;
 	[SerializeField] private GameObject projectilePrefab;
 	[SerializeField] private Transform projectileOrigin;
+	[SerializeField] private Animator muzzleFlashAnimator;
 	[SerializeField] private UnityEvent OnFireEvent;
 
 	private float fireTimestamp;
@@ -24,7 +26,7 @@ public class Shooter : StepMonoBehaviour
 		if (input.shoot && Time.time > fireTimestamp)
 		{
 			FireProjectile();
-			OnFireEvent.Invoke();
+
 			fireTimestamp = Time.time + rateOfFire;
 		}
 	}
@@ -39,5 +41,11 @@ public class Shooter : StepMonoBehaviour
 
 		var projectileFacade = instance.GetComponent<ProjectileFacade>();
 		projectileFacade.SetShooter(this);
+
+		OnFireEvent.Invoke();
+		if (muzzleFlashAnimator)
+		{
+			muzzleFlashAnimator.Play("Flash");
+		}
 	}
 }
