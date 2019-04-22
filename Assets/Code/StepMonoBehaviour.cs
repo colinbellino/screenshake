@@ -19,21 +19,18 @@ public class StepMonoBehaviour : MonoBehaviour
 		triggerBroadcaster = GetComponentInParent<TriggerBroadcaster>();
 		animator = GetComponentInParent<Animator>();
 
-		DebugMenu.OnStepChange += OnStepChange;
+		UpdateStepComponents();
+
+		DebugMenu.OnStepChange += UpdateStepComponents;
 	}
 
 	protected virtual void OnDisable()
 	{
-		DebugMenu.OnStepChange -= OnStepChange;
+		DebugMenu.OnStepChange -= UpdateStepComponents;
 	}
 
 	private void UpdateStepComponents()
 	{
 		controller = stepManager.GetComponentInStep<CharacterController2D>();
-	}
-
-	private void OnStepChange()
-	{
-		UpdateStepComponents();
 	}
 }

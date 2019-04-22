@@ -15,7 +15,8 @@ public class DebugMenu : MonoBehaviour
 		new State { text = "Introduction", color = new Color32(255, 160, 116, 116) },
 		new State { text = "Basic animations and sound", color = new Color32(255, 160, 124, 116) },
 		new State { text = "Lower enemy hp", color = new Color32(255, 160, 132, 116) },
-		new State { text = "Higher rate of fire", color = new Color32(255, 160, 140, 116) }
+		new State { text = "Higher rate of fire", color = new Color32(255, 160, 140, 116) },
+		new State { text = "More enemies", color = new Color32(255, 168, 140, 116) }
 	};
 	public int currentStepIndex { get; private set; }
 
