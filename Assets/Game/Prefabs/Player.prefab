@@ -52,6 +52,7 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 0}
+  spread: 0
   OnFireEvent:
     m_PersistentCalls:
       m_Calls:
@@ -69,7 +70,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  spread: 0
 --- !u!114 &419294719425559914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,6 +776,7 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 7816825649422434700}
+  spread: 0
   OnFireEvent:
     m_PersistentCalls:
       m_Calls:
@@ -793,7 +794,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  spread: 0
 --- !u!114 &5312242524096280261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,6 +963,7 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 7816825649422434700}
+  spread: 0.03
   OnFireEvent:
     m_PersistentCalls:
       m_Calls:
@@ -980,7 +981,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  spread: 0.02
 --- !u!114 &1804055014676553208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,6 +1150,7 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 0}
+  spread: 0
   OnFireEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1167,7 +1168,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  spread: 0
 --- !u!114 &3794349643241494670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1337,6 +1337,7 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 7816825649422434700}
+  spread: 0
   OnFireEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1354,7 +1355,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  spread: 0
 --- !u!114 &6785333160753589800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,6 +1524,7 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 0}
+  spread: 0
   OnFireEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1541,7 +1542,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  spread: 0
 --- !u!114 &6152233042190988321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1741,12 +1741,12 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 0}
+  spread: 0
   OnFireEvent:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  spread: 0
 --- !u!114 &5925077575731449528
 MonoBehaviour:
   m_ObjectHideFlags: 0
