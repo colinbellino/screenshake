@@ -87,7 +87,7 @@ public class StepManager : MonoBehaviour
 		var previous = GetPreviousStep(index);
 		if (previous != null)
 		{
-			Debug.LogWarning($"{transform.name}: Defaulting to {previous.Item1} (asked for {index}).");
+			// Debug.LogWarning($"{transform.name}: Defaulting to {previous.Item1} (asked for {index}).");
 			return previous.Item2;
 		}
 

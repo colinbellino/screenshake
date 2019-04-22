@@ -50,12 +50,10 @@ public class Shooter : StepMonoBehaviour
 		}
 	}
 
-	// FIXME: Enable only on step8+
 	private Quaternion GetProjectileRotation()
 	{
 		var rotation = transform.root.rotation;
 		rotation.z = rotation.z + UnityEngine.Random.Range(-spread, spread);
-		Debug.Log(transform.root.rotation + " -> " + rotation);
 
 		return rotation;
 	}
