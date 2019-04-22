@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class StepManager : MonoBehaviour
@@ -5,17 +6,14 @@ public class StepManager : MonoBehaviour
 	private DebugMenu debugMenu;
 	private Animator animator;
 
-	private void Awake()
+	private void OnEnable()
 	{
 		debugMenu = GameObject.Find("Game Manager").GetComponent<DebugMenu>();
 		animator = GetComponent<Animator>();
 
 		DisableAllSteps();
 		EnableCurrentStep();
-	}
 
-	private void OnEnable()
-	{
 		DebugMenu.OnStepChange += OnStepChange;
 	}
 
@@ -47,38 +45,67 @@ public class StepManager : MonoBehaviour
 
 	private void EnableCurrentStep()
 	{
-		var current = transform.Find($"Step{debugMenu.currentStepIndex}");
-		if (current != null)
-		{
-			foreach (var component in current.GetComponents<MonoBehaviour>())
-			{
-				component.enabled = true;
-			}
+		var current = GetCurrentStep();
 
-			var stepAnimator = current.GetComponent<StepAnimator>();
-			if (stepAnimator)
-			{
-				animator.runtimeAnimatorController = stepAnimator.controller;
-			}
+		if (current == null) { return; }
+
+		foreach (var component in current.GetComponents<MonoBehaviour>())
+		{
+			component.enabled = true;
+		}
+
+		var stepAnimator = current.GetComponent<StepAnimator>();
+		if (stepAnimator)
+		{
+			animator.runtimeAnimatorController = stepAnimator.controller;
 		}
 	}
 
 	public T GetComponentInStep<T>()
 	{
-		var stepTransform = transform.Find($"Step{debugMenu.currentStepIndex}");
-		if (stepTransform == null)
-		{
-			var step0Transform = transform.Find("Step0");
-			if (step0Transform != null)
-			{
-				Debug.LogWarning($"{transform.name}: Defaulting to \"Step0\".");
-				return step0Transform.GetComponent<T>();
-			}
+		return GetCurrentStep().GetComponent<T>();
+	}
 
-			Debug.LogError($"{transform.name}: Step not found \"Step{debugMenu.currentStepIndex}\".");
-			return GetComponent<T>();
+	private Transform GetCurrentStep()
+	{
+		// A quick and dirty hack because sometimes this is called before debugMenu is initialized..
+		if (debugMenu == null)
+		{
+			Debug.LogError("Couldn't find debugMenu.");
+			return null;
 		}
 
-		return stepTransform.GetComponent<T>();
+		var index = debugMenu.currentStepIndex;
+
+		var current = transform.Find($"Step{index}");
+		if (current != null)
+		{
+			// Debug.Log($"{transform.name}: Get step (asked for {index}).");
+			return current;
+		}
+
+		var previous = GetPreviousStep(index);
+		if (previous != null)
+		{
+			Debug.LogWarning($"{transform.name}: Defaulting to {previous.Item1} (asked for {index}).");
+			return previous.Item2;
+		}
+
+		Debug.LogError($"{transform.name}: Step not found (asked for {index}).");
+		return transform;
+	}
+
+	private Tuple<int, Transform> GetPreviousStep(int index)
+	{
+		for (int i = index - 1; i >= 0; i--)
+		{
+			var current = transform.Find($"Step{i}");
+			if (current)
+			{
+				return new Tuple<int, Transform>(i, current);
+			}
+		}
+
+		return null;
 	}
 }

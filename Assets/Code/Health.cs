@@ -7,6 +7,8 @@ public class Health : MonoBehaviour
 
 	private Transform owner;
 
+	public static Action<Transform> OnDeathEvent = delegate { };
+
 	private void OnEnable()
 	{
 		owner = transform.root;
@@ -26,11 +28,11 @@ public class Health : MonoBehaviour
 		// TODO: Trigger animation
 		health = Math.Max(health - damage, 0);
 
-		if (health == 0)
+		if (health <= 0)
 		{
 			// TODO: Trigger sound
 			// TODO: Trigger animation
-			Destroy(owner.gameObject);
+			OnDeathEvent.Invoke(owner);
 		}
 	}
 }
