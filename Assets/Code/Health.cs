@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 
 	private Transform owner;
 	private Animator animator;
+	private Rigidbody2D rb;
 
 	public static Action<Transform> OnDeathEvent = delegate { };
 
@@ -14,6 +15,7 @@ public class Health : MonoBehaviour
 	{
 		owner = transform.root;
 		animator = GetComponentInParent<Animator>();
+		rb = GetComponentInParent<Rigidbody2D>();
 
 		Damage.OnDamage += OnDamage;
 	}
@@ -25,7 +27,7 @@ public class Health : MonoBehaviour
 
 	private void OnDamage(Transform target, int damage)
 	{
-		if (target != transform.root) { return; }
+		if (target != owner) { return; }
 
 		health = Math.Max(health - damage, 0);
 
