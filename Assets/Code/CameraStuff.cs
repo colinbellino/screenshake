@@ -4,13 +4,7 @@ using UnityEngine;
 public class CameraStuff : MonoBehaviour
 {
 	[SerializeField] private Vector3 offset;
-
-	private GameObject target;
-
-	private void OnEnable()
-	{
-		target = GameObject.FindGameObjectWithTag("Player");
-	}
+	[SerializeField] private GameObject target;
 
 	private void Update()
 	{

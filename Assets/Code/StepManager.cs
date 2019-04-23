@@ -11,18 +11,17 @@ public class StepManager : MonoBehaviour
 		debugMenu = GameObject.Find("Game Manager").GetComponent<DebugMenu>();
 		animator = GetComponent<Animator>();
 
-		DisableAllSteps();
-		EnableCurrentStep();
+		UpdateStep();
 
-		DebugMenu.OnStepChange += OnStepChange;
+		DebugMenu.OnStepChange += UpdateStep;
 	}
 
 	private void OnDisable()
 	{
-		DebugMenu.OnStepChange -= OnStepChange;
+		DebugMenu.OnStepChange -= UpdateStep;
 	}
 
-	private void OnStepChange()
+	private void UpdateStep()
 	{
 		DisableAllSteps();
 		EnableCurrentStep();
@@ -35,10 +34,7 @@ public class StepManager : MonoBehaviour
 			var current = transform.Find($"Step{i}");
 			if (current != null)
 			{
-				foreach (var component in current.GetComponents<MonoBehaviour>())
-				{
-					component.enabled = false;
-				}
+				current.gameObject.SetActive(false);
 			}
 		}
 	}
@@ -49,10 +45,7 @@ public class StepManager : MonoBehaviour
 
 		if (current == null) { return; }
 
-		foreach (var component in current.GetComponents<MonoBehaviour>())
-		{
-			component.enabled = true;
-		}
+		current.gameObject.SetActive(true);
 
 		var stepAnimator = current.GetComponent<StepAnimator>();
 		if (stepAnimator)
