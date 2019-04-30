@@ -11,20 +11,22 @@ public class Shooter : StepMonoBehaviour
 	[SerializeField] private Animator muzzleFlashAnimator;
 	[SerializeField] private float spread = 0f;
 	[SerializeField] private float knockback = 0f;
+	[SerializeField] private bool sendShootingEvents;
 	[SerializeField] private UnityEvent OnFireEvent;
 
-	private float fireTimestamp;
+	public static Action<bool> OnShootingStatusChange = delegate { };
 
-	private void Awake()
-	{
-		if (OnFireEvent == null)
-		{
-			OnFireEvent = new UnityEvent();
-		}
-	}
+	private float fireTimestamp;
+	private bool _shooting;
 
 	private void Update()
 	{
+		if (sendShootingEvents && input.shoot != _shooting)
+		{
+			_shooting = input.shoot;
+			OnShootingStatusChange(_shooting);
+		}
+
 		if (input.shoot && Time.time > fireTimestamp)
 		{
 			FireProjectile();
@@ -53,7 +55,7 @@ public class Shooter : StepMonoBehaviour
 		var projectileFacade = instance.GetComponent<ProjectileFacade>();
 		projectileFacade.SetShooter(this);
 
-		OnFireEvent.Invoke();
+		OnFireEvent?.Invoke();
 		if (muzzleFlashAnimator)
 		{
 			muzzleFlashAnimator.Play("Flash");
