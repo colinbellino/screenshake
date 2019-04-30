@@ -17,12 +17,12 @@ public class Spawner : MonoBehaviour
 	{
 		owner = transform.root;
 
-		Health.OnDeathEvent += OnDeath;
+		Health.OnDeathAction += OnDeath;
 	}
 
 	private void OnDisable()
 	{
-		Health.OnDeathEvent -= OnDeath;
+		Health.OnDeathAction -= OnDeath;
 
 		ClearChildren();
 	}
