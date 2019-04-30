@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Move : StepMonoBehaviour
@@ -10,6 +11,7 @@ public class Move : StepMonoBehaviour
 	private const float hitStopDuration = 0.2f;
 	private float jumpTimestamp;
 	private float hitStopTimetamp;
+	private bool canFlip = true;
 
 	protected override void OnEnable()
 	{
@@ -18,15 +20,17 @@ public class Move : StepMonoBehaviour
 		owner = transform.root;
 
 		Damage.OnDamage += OnDamage;
+		Shooter.OnShootingStatusChange += OnShootingStatusChange;
 	}
 
 	protected override void OnDisable()
 	{
 		base.OnDisable();
 
-		controller.Move(0f, false, false);
+		controller.Move(0f, false, false, canFlip);
 
 		Damage.OnDamage -= OnDamage;
+		Shooter.OnShootingStatusChange -= OnShootingStatusChange;
 	}
 
 	private void FixedUpdate()
@@ -35,7 +39,7 @@ public class Move : StepMonoBehaviour
 
 		if (Time.time < hitStopTimetamp) { return; }
 
-		controller.Move(input.move * speed * Time.deltaTime, false, input.jump && jumpCooldownElapsed);
+		controller.Move(input.move * speed * Time.deltaTime, false, input.jump && jumpCooldownElapsed, canFlip);
 
 		if (input.jump && jumpCooldownElapsed)
 		{
@@ -52,5 +56,10 @@ public class Move : StepMonoBehaviour
 			rb.AddForce(new Vector3(owner.right.x * -2f, 0, 0f), ForceMode2D.Impulse);
 			hitStopTimetamp = Time.time + hitStopDuration;
 		}
+	}
+
+	private void OnShootingStatusChange(bool isShooting)
+	{
+		canFlip = !isShooting;
 	}
 }

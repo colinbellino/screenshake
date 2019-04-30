@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,12 @@ public class CharacterController2D : StepMonoBehaviour
 	[Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f; // How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false; // Whether or not a player can steer while jumping;
 	[SerializeField] private LayerMask m_WhatIsGround; // A mask determining what is ground to the character
+
+	internal void Move(float v1, bool v2, bool v3, object canFlip)
+	{
+		throw new NotImplementedException();
+	}
+
 	[SerializeField] private Transform m_GroundCheck; // A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck; // A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider; // A collider that will be disabled when crouching
@@ -73,7 +80,7 @@ public class CharacterController2D : StepMonoBehaviour
 		}
 	}
 
-	public void Move(float move, bool crouch, bool jump)
+	public void Move(float move, bool crouch, bool jump, bool canFlip)
 	{
 		if (animator && Mathf.Approximately(rb.velocity.y, 0f))
 		{
@@ -132,17 +139,20 @@ public class CharacterController2D : StepMonoBehaviour
 				animator.SetFloat("MoveX", move < 0.05f && rb.velocity.x > -0.05f ? 0 : 1f);
 			}
 
-			// If the input is moving the player right and the player is facing left...
-			if (move > 0 && !m_FacingRight)
+			if (canFlip)
 			{
-				// ... flip the player.
-				Flip();
-			}
-			// Otherwise if the input is moving the player left and the player is facing right...
-			else if (move < 0 && m_FacingRight)
-			{
-				// ... flip the player.
-				Flip();
+				// If the input is moving the player right and the player is facing left...
+				if (move > 0 && !m_FacingRight)
+				{
+					// ... flip the player.
+					Flip();
+				}
+				// Otherwise if the input is moving the player left and the player is facing right...
+				else if (move < 0 && m_FacingRight)
+				{
+					// ... flip the player.
+					Flip();
+				}
 			}
 		}
 
