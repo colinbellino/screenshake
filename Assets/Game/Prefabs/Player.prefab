@@ -967,7 +967,7 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 7816825649422434700}
-  spread: 0.03
+  spread: 0.1
   OnFireEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1341,7 +1341,7 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 7816825649422434700}
-  spread: 0.03
+  spread: 0.1
   OnFireEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2114,7 +2114,7 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 7816825649422434700}
-  spread: 0.03
+  spread: 0.1
   OnFireEvent:
     m_PersistentCalls:
       m_Calls:
