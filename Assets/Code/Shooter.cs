@@ -10,6 +10,7 @@ public class Shooter : StepMonoBehaviour
 	[SerializeField] private Transform projectileOrigin;
 	[SerializeField] private Animator muzzleFlashAnimator;
 	[SerializeField] private float spread = 0f;
+	[SerializeField] private float knockback = 0f;
 	[SerializeField] private UnityEvent OnFireEvent;
 
 	private float fireTimestamp;
@@ -27,8 +28,17 @@ public class Shooter : StepMonoBehaviour
 		if (input.shoot && Time.time > fireTimestamp)
 		{
 			FireProjectile();
+			Knockback();
 
 			fireTimestamp = Time.time + rateOfFire;
+		}
+	}
+
+	private void Knockback()
+	{
+		if (knockback > 0)
+		{
+			rb.AddForce(Vector3.right * -1 * knockback);
 		}
 	}
 
