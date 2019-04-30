@@ -38,7 +38,7 @@ public class Shooter : StepMonoBehaviour
 	{
 		if (knockback > 0)
 		{
-			rb.AddForce(Vector3.right * -1 * knockback);
+			rb.AddForce(transform.right * -1 * knockback);
 		}
 	}
 
