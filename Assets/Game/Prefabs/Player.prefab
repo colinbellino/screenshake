@@ -175,6 +175,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  OnDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &5938748536763693826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +347,7 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 7816825649422434700}
-  spread: 0.1
+  spread: 0.075
   knockback: 25
   OnFireEvent:
     m_PersistentCalls:
@@ -476,6 +481,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  OnDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &972124313480862750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,6 +1156,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  OnDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &4449567192547612204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1211,7 +1226,7 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 7816825649422434700}
-  spread: 0.1
+  spread: 0.075
   knockback: 0
   OnFireEvent:
     m_PersistentCalls:
@@ -1334,6 +1349,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  OnDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &7199728077488660975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1522,6 +1542,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  OnDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &4524751569040074364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1587,7 +1612,7 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 7816825649422434700}
-  spread: 0.1
+  spread: 0.075
   knockback: 0
   OnFireEvent:
     m_PersistentCalls:
@@ -1710,6 +1735,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  OnDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &6621305865785829614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1928,6 +1958,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  OnDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1145802928627056196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2116,6 +2151,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  OnDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &3589331489410008805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2298,6 +2338,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  OnDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &7575543290643859676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2364,7 +2409,7 @@ MonoBehaviour:
     type: 3}
   projectileOrigin: {fileID: 5866980215230909896}
   muzzleFlashAnimator: {fileID: 7816825649422434700}
-  spread: 0.1
+  spread: 0.075
   knockback: 0
   OnFireEvent:
     m_PersistentCalls:
@@ -2498,6 +2543,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  OnDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &851242399005424946
 MonoBehaviour:
   m_ObjectHideFlags: 0
