@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class Health : MonoBehaviour
 	private Animator animator;
 	private Rigidbody2D rb;
 
-	public static Action<Transform> OnDeathEvent = delegate { };
+	public UnityEvent OnDamageEvent;
+	public static Action<Transform> OnDeathAction = delegate { };
 
 	private void OnEnable()
 	{
@@ -31,16 +33,14 @@ public class Health : MonoBehaviour
 
 		health = Math.Max(health - damage, 0);
 
-		if (animator)
-		{
-			animator.Play("Hit");
-		}
+		OnDamageEvent?.Invoke();
+		animator?.Play("Hit");
 
 		if (health <= 0)
 		{
 			// TODO: Trigger sound
 			// TODO: Trigger animation
-			OnDeathEvent.Invoke(owner);
+			OnDeathAction.Invoke(owner);
 		}
 	}
 }
